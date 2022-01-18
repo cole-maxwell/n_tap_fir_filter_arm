@@ -1,0 +1,22 @@
+# Ignore everything
+*
+
+# But not these files...
+!*.gitignore
+!*.qpf
+!*.qsf
+!*.sdc
+!*.qip
+!*.sip
+!*.stp
+!*.qsys
+!*.v
+# etc...
+
+# ...even if they are in subdirectories
+!*/
+
+
+arm_hps/
+greybox_tmp/
+db/
