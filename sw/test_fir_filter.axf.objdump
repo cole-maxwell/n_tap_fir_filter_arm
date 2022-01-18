@@ -1,0 +1,1094 @@
+
+C:/Users/coleh/Desktop/uma/ece636_reconfigurableComputing/hw3_project/project-materials-part1/fir_filter_arm_student/fir_filter_arm/sw/test_fir_filter.axf:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <__cs3_interrupt_vector>:
+   0:	18 f0 9f e5 18 f0 9f e5 18 f0 9f e5 18 f0 9f e5     ................
+  10:	18 f0 9f e5 18 f0 9f e5 18 f0 9f e5 18 f0 9f e5     ................
+  20:	40 00 00 00 84 0a 00 00 88 0a 00 00 8c 0a 00 00     @...............
+  30:	90 0a 00 00 80 0a 00 00 94 0a 00 00 98 0a 00 00     ................
+
+00000040 <__cs3_reset>:
+  40:	ea000026 	b	e0 <__cs3_start_asm_sim>
+
+00000044 <__cs3_start_c>:
+  44:	e59f608c 	ldr	r6, [pc, #140]	; d8 <__cs3_start_c+0x94>
+  48:	e3560000 	cmp	r6, #0
+  4c:	e92d4080 	push	{r7, lr}
+  50:	e2466001 	sub	r6, r6, #1
+  54:	0a00001e 	beq	d4 <__cs3_start_c+0x90>
+  58:	e59f507c 	ldr	r5, [pc, #124]	; dc <__cs3_start_c+0x98>
+  5c:	e3a00000 	mov	r0, #0
+  60:	e3a01000 	mov	r1, #0
+  64:	e515200c 	ldr	r2, [r5, #-12]
+  68:	e515e010 	ldr	lr, [r5, #-16]
+  6c:	e5154008 	ldr	r4, [r5, #-8]
+  70:	e15e0002 	cmp	lr, r2
+  74:	00822004 	addeq	r2, r2, r4
+  78:	0a000009 	beq	a4 <__cs3_start_c+0x60>
+  7c:	e3540000 	cmp	r4, #0
+  80:	0a000007 	beq	a4 <__cs3_start_c+0x60>
+  84:	e1a07002 	mov	r7, r2
+  88:	e1a0c002 	mov	r12, r2
+  8c:	e8be000c 	ldm	lr!, {r2, r3}
+  90:	e8ac000c 	stmia	r12!, {r2, r3}
+  94:	e067300c 	rsb	r3, r7, r12
+  98:	e1540003 	cmp	r4, r3
+  9c:	e1a0200c 	mov	r2, r12
+  a0:	1afffff9 	bne	8c <__cs3_start_c+0x48>
+  a4:	e515e004 	ldr	lr, [r5, #-4]
+  a8:	e35e0000 	cmp	lr, #0
+  ac:	11a03002 	movne	r3, r2
+  b0:	0a000003 	beq	c4 <__cs3_start_c+0x80>
+  b4:	e8a30003 	stmia	r3!, {r0, r1}
+  b8:	e062c003 	rsb	r12, r2, r3
+  bc:	e15e000c 	cmp	lr, r12
+  c0:	1afffffb 	bne	b4 <__cs3_start_c+0x70>
+  c4:	e2466001 	sub	r6, r6, #1
+  c8:	e3760001 	cmn	r6, #1
+  cc:	e2855014 	add	r5, r5, #20
+  d0:	1affffe3 	bne	64 <__cs3_start_c+0x20>
+  d4:	eb000250 	bl	a1c <__cs3_premain>
+  d8:	00000001 	.word	0x00000001
+  dc:	00000f80 	.word	0x00000f80
+
+000000e0 <__cs3_start_asm_sim>:
+  e0:	e28f103c 	add	r1, pc, #60	; 0x3c
+  e4:	e3a00016 	mov	r0, #22
+  e8:	ef123456 	svc	0x00123456
+  ec:	e3500000 	cmp	r0, #0
+  f0:	ba000008 	blt	118 <__cs3_start_asm_sim+0x38>
+  f4:	e59f2028 	ldr	r2, [pc, #40]	; 124 <__cs3_heap_start_ptr>
+  f8:	e59fd01c 	ldr	sp, [pc, #28]	; 11c <__cs3_start_asm_sim+0x3c>
+  fc:	e5920008 	ldr	r0, [r2, #8]
+ 100:	e3500000 	cmp	r0, #0
+ 104:	11a0d000 	movne	sp, r0
+ 108:	e59f1010 	ldr	r1, [pc, #16]	; 120 <__cs3_start_asm_sim+0x40>
+ 10c:	e5920004 	ldr	r0, [r2, #4]
+ 110:	e3500000 	cmp	r0, #0
+ 114:	15810000 	strne	r0, [r1]
+ 118:	eaffffc9 	b	44 <__cs3_start_c>
+ 11c:	3ffffff8 	.word	0x3ffffff8
+ 120:	000013d0 	.word	0x000013d0
+
+00000124 <__cs3_heap_start_ptr>:
+ 124:	000015f8 	.word	0x000015f8
+
+00000128 <_start>:
+ 128:	e51fd000 	ldr	sp, [pc, #-0]	; 130 <_start+0x8>
+ 12c:	eaffffc4 	b	44 <__cs3_start_c>
+ 130:	3ffffff8 	.word	0x3ffffff8
+
+00000134 <deregister_tm_clones>:
+ 134:	e92d4008 	push	{r3, lr}
+ 138:	e59f002c 	ldr	r0, [pc, #44]	; 16c <deregister_tm_clones+0x38>
+ 13c:	e59f302c 	ldr	r3, [pc, #44]	; 170 <deregister_tm_clones+0x3c>
+ 140:	e0603003 	rsb	r3, r0, r3
+ 144:	e3530006 	cmp	r3, #6
+ 148:	8a000001 	bhi	154 <deregister_tm_clones+0x20>
+ 14c:	e8bd4008 	pop	{r3, lr}
+ 150:	e12fff1e 	bx	lr
+ 154:	e59f3018 	ldr	r3, [pc, #24]	; 174 <deregister_tm_clones+0x40>
+ 158:	e3530000 	cmp	r3, #0
+ 15c:	0afffffa 	beq	14c <deregister_tm_clones+0x18>
+ 160:	e1a0e00f 	mov	lr, pc
+ 164:	e12fff13 	bx	r3
+ 168:	eafffff7 	b	14c <deregister_tm_clones+0x18>
+ 16c:	000013d8 	.word	0x000013d8
+ 170:	000013db 	.word	0x000013db
+ 174:	00000000 	.word	0x00000000
+
+00000178 <register_tm_clones>:
+ 178:	e92d4008 	push	{r3, lr}
+ 17c:	e59f0034 	ldr	r0, [pc, #52]	; 1b8 <register_tm_clones+0x40>
+ 180:	e59f3034 	ldr	r3, [pc, #52]	; 1bc <register_tm_clones+0x44>
+ 184:	e0603003 	rsb	r3, r0, r3
+ 188:	e1a03143 	asr	r3, r3, #2
+ 18c:	e0833fa3 	add	r3, r3, r3, lsr #31
+ 190:	e1b010c3 	asrs	r1, r3, #1
+ 194:	1a000001 	bne	1a0 <register_tm_clones+0x28>
+ 198:	e8bd4008 	pop	{r3, lr}
+ 19c:	e12fff1e 	bx	lr
+ 1a0:	e59f2018 	ldr	r2, [pc, #24]	; 1c0 <register_tm_clones+0x48>
+ 1a4:	e3520000 	cmp	r2, #0
+ 1a8:	0afffffa 	beq	198 <register_tm_clones+0x20>
+ 1ac:	e1a0e00f 	mov	lr, pc
+ 1b0:	e12fff12 	bx	r2
+ 1b4:	eafffff7 	b	198 <register_tm_clones+0x20>
+ 1b8:	000013d8 	.word	0x000013d8
+ 1bc:	000013d8 	.word	0x000013d8
+ 1c0:	00000000 	.word	0x00000000
+
+000001c4 <__do_global_dtors_aux>:
+ 1c4:	e92d4010 	push	{r4, lr}
+ 1c8:	e59f402c 	ldr	r4, [pc, #44]	; 1fc <__do_global_dtors_aux+0x38>
+ 1cc:	e5d43000 	ldrb	r3, [r4]
+ 1d0:	e3530000 	cmp	r3, #0
+ 1d4:	1a000006 	bne	1f4 <__do_global_dtors_aux+0x30>
+ 1d8:	ebffffd5 	bl	134 <deregister_tm_clones>
+ 1dc:	e59f301c 	ldr	r3, [pc, #28]	; 200 <__do_global_dtors_aux+0x3c>
+ 1e0:	e3530000 	cmp	r3, #0
+ 1e4:	159f0018 	ldrne	r0, [pc, #24]	; 204 <__do_global_dtors_aux+0x40>
+ 1e8:	1320f000 	nopne	{0}
+ 1ec:	e3a03001 	mov	r3, #1
+ 1f0:	e5c43000 	strb	r3, [r4]
+ 1f4:	e8bd4010 	pop	{r4, lr}
+ 1f8:	e12fff1e 	bx	lr
+ 1fc:	000013d8 	.word	0x000013d8
+ 200:	00000000 	.word	0x00000000
+ 204:	00000b24 	.word	0x00000b24
+
+00000208 <frame_dummy>:
+ 208:	e92d4008 	push	{r3, lr}
+ 20c:	e59f3034 	ldr	r3, [pc, #52]	; 248 <__cs3_region_zero_size_ram+0x28>
+ 210:	e3530000 	cmp	r3, #0
+ 214:	159f0030 	ldrne	r0, [pc, #48]	; 24c <__cs3_region_zero_size_ram+0x2c>
+ 218:	159f1030 	ldrne	r1, [pc, #48]	; 250 <__cs3_region_zero_size_ram+0x30>
+ 21c:	1320f000 	nopne	{0}
+ 220:	e59f002c 	ldr	r0, [pc, #44]	; 254 <__cs3_region_zero_size_ram+0x34>
+ 224:	e5903000 	ldr	r3, [r0]
+ 228:	e3530000 	cmp	r3, #0
+ 22c:	0a000003 	beq	240 <__cs3_region_zero_size_ram+0x20>
+ 230:	e59f3020 	ldr	r3, [pc, #32]	; 258 <__cs3_region_zero_size_ram+0x38>
+ 234:	e3530000 	cmp	r3, #0
+ 238:	11a0e00f 	movne	lr, pc
+ 23c:	112fff13 	bxne	r3
+ 240:	e8bd4008 	pop	{r3, lr}
+ 244:	eaffffcb 	b	178 <register_tm_clones>
+ 248:	00000000 	.word	0x00000000
+ 24c:	00000b24 	.word	0x00000b24
+ 250:	000013dc 	.word	0x000013dc
+ 254:	00000f80 	.word	0x00000f80
+ 258:	00000000 	.word	0x00000000
+
+0000025c <main>:
+
+//==========================================================
+// Main program
+//==========================================================
+int main()
+{
+ 25c:	e92d4800 	push	{r11, lr}
+ 260:	e28db004 	add	r11, sp, #4
+    // Loop forever
+    while(1)
+    {
+        // Reset the input buffer of the FIR wrapper
+        if(*OUTPUT_PIO_ptr != 0x00000000)
+ 264:	e3003f90 	movw	r3, #3984	; 0xf90
+ 268:	e3403000 	movt	r3, #0
+ 26c:	e5933000 	ldr	r3, [r3]
+ 270:	e5933000 	ldr	r3, [r3]
+ 274:	e3530000 	cmp	r3, #0
+ 278:	0a000001 	beq	284 <main+0x28>
+            send_word(0x0000);
+ 27c:	e3a00000 	mov	r0, #0
+ 280:	eb0000bf 	bl	584 <send_word>
+
+        // Reset the Hex displays
+        *DISPLAY_PIO_ptr = 0;
+ 284:	e3003f8c 	movw	r3, #3980	; 0xf8c
+ 288:	e3403000 	movt	r3, #0
+ 28c:	e5933000 	ldr	r3, [r3]
+ 290:	e3a02000 	mov	r2, #0
+ 294:	e5832000 	str	r2, [r3]
+
+        // Send to FIR filter the values of the signal
+        send_signal_values();
+ 298:	eb000095 	bl	4f4 <send_signal_values>
+
+        // Receive the outcomes of the FIR filter
+        receive_fir_results();
+ 29c:	eb000049 	bl	3c8 <receive_fir_results>
+
+        // Compare the output values of the
+        // FIR module with the expected results
+        check_fir_results();
+ 2a0:	eb00001f 	bl	324 <check_fir_results>
+ 2a4:	ea000000 	b	2ac <main+0x50>
+
+                break;
+            }
+            else if(*KEY_PIO_ptr == 0xD)                // If KEY1 is pressed, print on the Hex
+                print_array(fir_results, SIGNAL_SIZE);  // displays the outcomes of the FIR module
+        }
+ 2a8:	e1a00000 	nop			; (mov r0, r0)
+        // Loop forever until a key is pressed down
+        while(1)
+        {
+            // If KEY2 is pressed, first reset LEDs and HEX displays
+            // and then break the loop to repeat the testing procedure
+            if(*KEY_PIO_ptr == 0xB)
+ 2ac:	e3003f98 	movw	r3, #3992	; 0xf98
+ 2b0:	e3403000 	movt	r3, #0
+ 2b4:	e5933000 	ldr	r3, [r3]
+ 2b8:	e5933000 	ldr	r3, [r3]
+ 2bc:	e353000b 	cmp	r3, #11
+ 2c0:	1a00000c 	bne	2f8 <main+0x9c>
+            {
+                *LED_PIO_ptr     = 0;
+ 2c4:	e3003f88 	movw	r3, #3976	; 0xf88
+ 2c8:	e3403000 	movt	r3, #0
+ 2cc:	e5933000 	ldr	r3, [r3]
+ 2d0:	e3a02000 	mov	r2, #0
+ 2d4:	e5832000 	str	r2, [r3]
+                *DISPLAY_PIO_ptr = 0;
+ 2d8:	e3003f8c 	movw	r3, #3980	; 0xf8c
+ 2dc:	e3403000 	movt	r3, #0
+ 2e0:	e5933000 	ldr	r3, [r3]
+ 2e4:	e3a02000 	mov	r2, #0
+ 2e8:	e5832000 	str	r2, [r3]
+                time_dalay();
+ 2ec:	eb0000ef 	bl	6b0 <time_dalay>
+
+                break;
+ 2f0:	e1a00000 	nop			; (mov r0, r0)
+            }
+            else if(*KEY_PIO_ptr == 0xD)                // If KEY1 is pressed, print on the Hex
+                print_array(fir_results, SIGNAL_SIZE);  // displays the outcomes of the FIR module
+        }
+    }
+ 2f4:	eaffffda 	b	264 <main+0x8>
+                *DISPLAY_PIO_ptr = 0;
+                time_dalay();
+
+                break;
+            }
+            else if(*KEY_PIO_ptr == 0xD)                // If KEY1 is pressed, print on the Hex
+ 2f8:	e3003f98 	movw	r3, #3992	; 0xf98
+ 2fc:	e3403000 	movt	r3, #0
+ 300:	e5933000 	ldr	r3, [r3]
+ 304:	e5933000 	ldr	r3, [r3]
+ 308:	e353000d 	cmp	r3, #13
+ 30c:	1affffe5 	bne	2a8 <main+0x4c>
+                print_array(fir_results, SIGNAL_SIZE);  // displays the outcomes of the FIR module
+ 310:	e30103f4 	movw	r0, #5108	; 0x13f4
+ 314:	e3400000 	movt	r0, #0
+ 318:	e3a01080 	mov	r1, #128	; 0x80
+ 31c:	eb0000b3 	bl	5f0 <print_array>
+        }
+ 320:	eaffffe0 	b	2a8 <main+0x4c>
+
+00000324 <check_fir_results>:
+}
+
+// Compare the output values of the
+// FIR module with the expected results
+void check_fir_results()
+{
+ 324:	e52db004 	push	{r11}		; (str r11, [sp, #-4]!)
+ 328:	e28db000 	add	r11, sp, #0
+ 32c:	e24dd00c 	sub	sp, sp, #12
+    int i    = 0;
+ 330:	e3a03000 	mov	r3, #0
+ 334:	e50b3008 	str	r3, [r11, #-8]
+    int pass = 1;
+ 338:	e3a03001 	mov	r3, #1
+ 33c:	e50b300c 	str	r3, [r11, #-12]
+
+    // Read the results of the FIR module
+    for(i = 0; i < SIGNAL_SIZE; ++i)
+ 340:	e3a03000 	mov	r3, #0
+ 344:	e50b3008 	str	r3, [r11, #-8]
+ 348:	ea00000e 	b	388 <check_fir_results+0x64>
+    {
+        // If different assert to zero the flag pass
+        if(fir_results[i] != expected_values[i])
+ 34c:	e30133f4 	movw	r3, #5108	; 0x13f4
+ 350:	e3403000 	movt	r3, #0
+ 354:	e51b2008 	ldr	r2, [r11, #-8]
+ 358:	e7932102 	ldr	r2, [r3, r2, lsl #2]
+ 35c:	e3003d28 	movw	r3, #3368	; 0xd28
+ 360:	e3403000 	movt	r3, #0
+ 364:	e51b1008 	ldr	r1, [r11, #-8]
+ 368:	e7933101 	ldr	r3, [r3, r1, lsl #2]
+ 36c:	e1520003 	cmp	r2, r3
+ 370:	0a000001 	beq	37c <check_fir_results+0x58>
+            pass = 0;
+ 374:	e3a03000 	mov	r3, #0
+ 378:	e50b300c 	str	r3, [r11, #-12]
+{
+    int i    = 0;
+    int pass = 1;
+
+    // Read the results of the FIR module
+    for(i = 0; i < SIGNAL_SIZE; ++i)
+ 37c:	e51b3008 	ldr	r3, [r11, #-8]
+ 380:	e2833001 	add	r3, r3, #1
+ 384:	e50b3008 	str	r3, [r11, #-8]
+ 388:	e51b3008 	ldr	r3, [r11, #-8]
+ 38c:	e353007f 	cmp	r3, #127	; 0x7f
+ 390:	daffffed 	ble	34c <check_fir_results+0x28>
+            pass = 0;
+    }
+
+    // If the IFR module passes the test, turn on the LEDs{1,0}
+    // otherwise turn on only the LED0 to signal the finish of the test
+    *LED_PIO_ptr = pass ? 3 : 1;
+ 394:	e3003f88 	movw	r3, #3976	; 0xf88
+ 398:	e3403000 	movt	r3, #0
+ 39c:	e5932000 	ldr	r2, [r3]
+ 3a0:	e51b300c 	ldr	r3, [r11, #-12]
+ 3a4:	e3530000 	cmp	r3, #0
+ 3a8:	0a000001 	beq	3b4 <check_fir_results+0x90>
+ 3ac:	e3a03003 	mov	r3, #3
+ 3b0:	ea000000 	b	3b8 <check_fir_results+0x94>
+ 3b4:	e3a03001 	mov	r3, #1
+ 3b8:	e5823000 	str	r3, [r2]
+}
+ 3bc:	e28bd000 	add	sp, r11, #0
+ 3c0:	e8bd0800 	ldmfd	sp!, {r11}
+ 3c4:	e12fff1e 	bx	lr
+
+000003c8 <receive_fir_results>:
+
+// Monitor the input PIO register to
+// receive the outcomes of the FIR filter
+void receive_fir_results()
+{
+ 3c8:	e52db004 	push	{r11}		; (str r11, [sp, #-4]!)
+ 3cc:	e28db000 	add	r11, sp, #0
+ 3d0:	e24dd00c 	sub	sp, sp, #12
+    // Initialize the prev_value with a value that
+    // is not possible to be the first result of
+    // the FIR module
+    int prev_value = 0x0000;
+ 3d4:	e3a03000 	mov	r3, #0
+ 3d8:	e50b3008 	str	r3, [r11, #-8]
+    int index = 0;
+ 3dc:	e3a03000 	mov	r3, #0
+ 3e0:	e50b300c 	str	r3, [r11, #-12]
+
+    // Monitor the input PIO while the index is lees
+    // than the size of the fir_results array
+    while(index < SIGNAL_SIZE)
+ 3e4:	ea00003c 	b	4dc <receive_fir_results+0x114>
+    {
+        // If a new value comes store it into the resutls
+        // array and increse the index counter
+        if(prev_value != *INPUT_PIO_ptr)
+ 3e8:	e3003f94 	movw	r3, #3988	; 0xf94
+ 3ec:	e3403000 	movt	r3, #0
+ 3f0:	e5933000 	ldr	r3, [r3]
+ 3f4:	e5932000 	ldr	r2, [r3]
+ 3f8:	e51b3008 	ldr	r3, [r11, #-8]
+ 3fc:	e1520003 	cmp	r2, r3
+ 400:	0a000035 	beq	4dc <receive_fir_results+0x114>
+        {
+            // Ignore value 0x8001 which is used by the
+            // FIR wrapper to reset the input PIO register
+            if(*INPUT_PIO_ptr != 0x00008001)
+ 404:	e3003f94 	movw	r3, #3988	; 0xf94
+ 408:	e3403000 	movt	r3, #0
+ 40c:	e5933000 	ldr	r3, [r3]
+ 410:	e5932000 	ldr	r2, [r3]
+ 414:	e3083001 	movw	r3, #32769	; 0x8001
+ 418:	e1520003 	cmp	r2, r3
+ 41c:	0a000029 	beq	4c8 <receive_fir_results+0x100>
+            {
+                // If the input value is less then 0 (16-bit) perform
+                // a 32-bit sign extension before storing the new value
+                // In addition, take into account that the value 0x00008000
+                // is used by the FIR module to indicate the value 0x00000000
+                if(*INPUT_PIO_ptr == 0x00008000)
+ 420:	e3003f94 	movw	r3, #3988	; 0xf94
+ 424:	e3403000 	movt	r3, #0
+ 428:	e5933000 	ldr	r3, [r3]
+ 42c:	e5933000 	ldr	r3, [r3]
+ 430:	e3530902 	cmp	r3, #32768	; 0x8000
+ 434:	1a000005 	bne	450 <receive_fir_results+0x88>
+                    fir_results[index] = 0;
+ 438:	e30133f4 	movw	r3, #5108	; 0x13f4
+ 43c:	e3403000 	movt	r3, #0
+ 440:	e51b200c 	ldr	r2, [r11, #-12]
+ 444:	e3a01000 	mov	r1, #0
+ 448:	e7831102 	str	r1, [r3, r2, lsl #2]
+ 44c:	ea00001a 	b	4bc <receive_fir_results+0xf4>
+                else if(*INPUT_PIO_ptr & 0x00008000)
+ 450:	e3003f94 	movw	r3, #3988	; 0xf94
+ 454:	e3403000 	movt	r3, #0
+ 458:	e5933000 	ldr	r3, [r3]
+ 45c:	e5933000 	ldr	r3, [r3]
+ 460:	e2033902 	and	r3, r3, #32768	; 0x8000
+ 464:	e3530000 	cmp	r3, #0
+ 468:	0a00000b 	beq	49c <receive_fir_results+0xd4>
+                    fir_results[index] = *INPUT_PIO_ptr | 0xFFFF0000;
+ 46c:	e3003f94 	movw	r3, #3988	; 0xf94
+ 470:	e3403000 	movt	r3, #0
+ 474:	e5933000 	ldr	r3, [r3]
+ 478:	e5933000 	ldr	r3, [r3]
+ 47c:	e1e03803 	mvn	r3, r3, lsl #16
+ 480:	e1e03823 	mvn	r3, r3, lsr #16
+ 484:	e1a01003 	mov	r1, r3
+ 488:	e30133f4 	movw	r3, #5108	; 0x13f4
+ 48c:	e3403000 	movt	r3, #0
+ 490:	e51b200c 	ldr	r2, [r11, #-12]
+ 494:	e7831102 	str	r1, [r3, r2, lsl #2]
+ 498:	ea000007 	b	4bc <receive_fir_results+0xf4>
+                else
+                    fir_results[index] = *INPUT_PIO_ptr;
+ 49c:	e3003f94 	movw	r3, #3988	; 0xf94
+ 4a0:	e3403000 	movt	r3, #0
+ 4a4:	e5933000 	ldr	r3, [r3]
+ 4a8:	e5931000 	ldr	r1, [r3]
+ 4ac:	e30133f4 	movw	r3, #5108	; 0x13f4
+ 4b0:	e3403000 	movt	r3, #0
+ 4b4:	e51b200c 	ldr	r2, [r11, #-12]
+ 4b8:	e7831102 	str	r1, [r3, r2, lsl #2]
+
+                ++index;
+ 4bc:	e51b300c 	ldr	r3, [r11, #-12]
+ 4c0:	e2833001 	add	r3, r3, #1
+ 4c4:	e50b300c 	str	r3, [r11, #-12]
+            }
+
+            // Update the prev_value with the new
+            // value of the input PIO register
+            prev_value = *INPUT_PIO_ptr;
+ 4c8:	e3003f94 	movw	r3, #3988	; 0xf94
+ 4cc:	e3403000 	movt	r3, #0
+ 4d0:	e5933000 	ldr	r3, [r3]
+ 4d4:	e5933000 	ldr	r3, [r3]
+ 4d8:	e50b3008 	str	r3, [r11, #-8]
+    int prev_value = 0x0000;
+    int index = 0;
+
+    // Monitor the input PIO while the index is lees
+    // than the size of the fir_results array
+    while(index < SIGNAL_SIZE)
+ 4dc:	e51b300c 	ldr	r3, [r11, #-12]
+ 4e0:	e353007f 	cmp	r3, #127	; 0x7f
+ 4e4:	daffffbf 	ble	3e8 <receive_fir_results+0x20>
+            // Update the prev_value with the new
+            // value of the input PIO register
+            prev_value = *INPUT_PIO_ptr;
+        }
+    }
+}
+ 4e8:	e28bd000 	add	sp, r11, #0
+ 4ec:	e8bd0800 	ldmfd	sp!, {r11}
+ 4f0:	e12fff1e 	bx	lr
+
+000004f4 <send_signal_values>:
+
+// Send the values of the signal to the FIR
+// filter through the output PIO register
+void send_signal_values()
+{
+ 4f4:	e92d4800 	push	{r11, lr}
+ 4f8:	e28db004 	add	r11, sp, #4
+ 4fc:	e24dd008 	sub	sp, sp, #8
+    int i = 0;
+ 500:	e3a03000 	mov	r3, #0
+ 504:	e50b3008 	str	r3, [r11, #-8]
+
+    // Prepare the input buffer of the FIR wrapper
+    send_word(0x8001);
+ 508:	e3080001 	movw	r0, #32769	; 0x8001
+ 50c:	eb00001c 	bl	584 <send_word>
+
+    // Read the signal_in array and send one by one the
+    // values of the signal to the FIR wrapper.
+    for(i = 0; i < SIGNAL_SIZE; ++i)
+ 510:	e3a03000 	mov	r3, #0
+ 514:	e50b3008 	str	r3, [r11, #-8]
+ 518:	ea000012 	b	568 <send_signal_values+0x74>
+    {
+        // Send to Hex displays the transmitted word
+        *DISPLAY_PIO_ptr = signal_in[i];
+ 51c:	e3003f8c 	movw	r3, #3980	; 0xf8c
+ 520:	e3403000 	movt	r3, #0
+ 524:	e5932000 	ldr	r2, [r3]
+ 528:	e3003b28 	movw	r3, #2856	; 0xb28
+ 52c:	e3403000 	movt	r3, #0
+ 530:	e51b1008 	ldr	r1, [r11, #-8]
+ 534:	e7933101 	ldr	r3, [r3, r1, lsl #2]
+ 538:	e5823000 	str	r3, [r2]
+
+        // Send the ith value of the signal
+        send_word(signal_in[i]);
+ 53c:	e3003b28 	movw	r3, #2856	; 0xb28
+ 540:	e3403000 	movt	r3, #0
+ 544:	e51b2008 	ldr	r2, [r11, #-8]
+ 548:	e7933102 	ldr	r3, [r3, r2, lsl #2]
+ 54c:	e1a00003 	mov	r0, r3
+ 550:	eb00000b 	bl	584 <send_word>
+
+        // Prepare the input buffer of the FIR wrapper
+        send_word(0x8001);
+ 554:	e3080001 	movw	r0, #32769	; 0x8001
+ 558:	eb000009 	bl	584 <send_word>
+    // Prepare the input buffer of the FIR wrapper
+    send_word(0x8001);
+
+    // Read the signal_in array and send one by one the
+    // values of the signal to the FIR wrapper.
+    for(i = 0; i < SIGNAL_SIZE; ++i)
+ 55c:	e51b3008 	ldr	r3, [r11, #-8]
+ 560:	e2833001 	add	r3, r3, #1
+ 564:	e50b3008 	str	r3, [r11, #-8]
+ 568:	e51b3008 	ldr	r3, [r11, #-8]
+ 56c:	e353007f 	cmp	r3, #127	; 0x7f
+ 570:	daffffe9 	ble	51c <send_signal_values+0x28>
+        // Prepare the input buffer of the FIR wrapper
+        send_word(0x8001);
+    }
+
+    // Reset the input buffer of the FIR wrapper
+    send_word(0x0000);
+ 574:	e3a00000 	mov	r0, #0
+ 578:	eb000001 	bl	584 <send_word>
+}
+ 57c:	e24bd004 	sub	sp, r11, #4
+ 580:	e8bd8800 	pop	{r11, pc}
+
+00000584 <send_word>:
+// Send a single word to FIR wrapper, to ensure
+// that has been sent it successfully, after a
+// word transmission wait until the wrapper
+// responds with an ack message
+void send_word(int word)
+{
+ 584:	e52db004 	push	{r11}		; (str r11, [sp, #-4]!)
+ 588:	e28db000 	add	r11, sp, #0
+ 58c:	e24dd00c 	sub	sp, sp, #12
+ 590:	e50b0008 	str	r0, [r11, #-8]
+    *OUTPUT_PIO_ptr = word;
+ 594:	e3003f90 	movw	r3, #3984	; 0xf90
+ 598:	e3403000 	movt	r3, #0
+ 59c:	e5933000 	ldr	r3, [r3]
+ 5a0:	e51b2008 	ldr	r2, [r11, #-8]
+ 5a4:	e5832000 	str	r2, [r3]
+
+    while(*INPUT_PIO_ptr == 0x00008001);
+ 5a8:	e1a00000 	nop			; (mov r0, r0)
+ 5ac:	e3003f94 	movw	r3, #3988	; 0xf94
+ 5b0:	e3403000 	movt	r3, #0
+ 5b4:	e5933000 	ldr	r3, [r3]
+ 5b8:	e5932000 	ldr	r2, [r3]
+ 5bc:	e3083001 	movw	r3, #32769	; 0x8001
+ 5c0:	e1520003 	cmp	r2, r3
+ 5c4:	0afffff8 	beq	5ac <send_word+0x28>
+
+    while(*INPUT_PIO_ptr == 0x00000000);
+ 5c8:	e1a00000 	nop			; (mov r0, r0)
+ 5cc:	e3003f94 	movw	r3, #3988	; 0xf94
+ 5d0:	e3403000 	movt	r3, #0
+ 5d4:	e5933000 	ldr	r3, [r3]
+ 5d8:	e5933000 	ldr	r3, [r3]
+ 5dc:	e3530000 	cmp	r3, #0
+ 5e0:	0afffff9 	beq	5cc <send_word+0x48>
+}
+ 5e4:	e28bd000 	add	sp, r11, #0
+ 5e8:	e8bd0800 	ldmfd	sp!, {r11}
+ 5ec:	e12fff1e 	bx	lr
+
+000005f0 <print_array>:
+
+// Print the values of the given array
+// to the Hex displays of the board
+void print_array(const int array[], int size)
+{
+ 5f0:	e92d4800 	push	{r11, lr}
+ 5f4:	e28db004 	add	r11, sp, #4
+ 5f8:	e24dd010 	sub	sp, sp, #16
+ 5fc:	e50b0010 	str	r0, [r11, #-16]
+ 600:	e50b1014 	str	r1, [r11, #-20]	; 0xffffffec
+    int i = 0;
+ 604:	e3a03000 	mov	r3, #0
+ 608:	e50b3008 	str	r3, [r11, #-8]
+
+    for(i = 0; i < size; ++i)
+ 60c:	e3a03000 	mov	r3, #0
+ 610:	e50b3008 	str	r3, [r11, #-8]
+ 614:	ea00001f 	b	698 <print_array+0xa8>
+    {
+        time_dalay();
+ 618:	eb000024 	bl	6b0 <time_dalay>
+        *DISPLAY_PIO_ptr = array[i];
+ 61c:	e3003f8c 	movw	r3, #3980	; 0xf8c
+ 620:	e3403000 	movt	r3, #0
+ 624:	e5933000 	ldr	r3, [r3]
+ 628:	e51b2008 	ldr	r2, [r11, #-8]
+ 62c:	e1a02102 	lsl	r2, r2, #2
+ 630:	e51b1010 	ldr	r1, [r11, #-16]
+ 634:	e0812002 	add	r2, r1, r2
+ 638:	e5922000 	ldr	r2, [r2]
+ 63c:	e5832000 	str	r2, [r3]
+        *LED_PIO_ptr     = i;
+ 640:	e3003f88 	movw	r3, #3976	; 0xf88
+ 644:	e3403000 	movt	r3, #0
+ 648:	e5933000 	ldr	r3, [r3]
+ 64c:	e51b2008 	ldr	r2, [r11, #-8]
+ 650:	e5832000 	str	r2, [r3]
+
+        // If KEY1 is pressed, break the loop and return
+        if(*KEY_PIO_ptr == 0xD)
+ 654:	e3003f98 	movw	r3, #3992	; 0xf98
+ 658:	e3403000 	movt	r3, #0
+ 65c:	e5933000 	ldr	r3, [r3]
+ 660:	e5933000 	ldr	r3, [r3]
+ 664:	e353000d 	cmp	r3, #13
+ 668:	1a000007 	bne	68c <print_array+0x9c>
+        {
+            while(*KEY_PIO_ptr == 0xD);
+ 66c:	e1a00000 	nop			; (mov r0, r0)
+ 670:	e3003f98 	movw	r3, #3992	; 0xf98
+ 674:	e3403000 	movt	r3, #0
+ 678:	e5933000 	ldr	r3, [r3]
+ 67c:	e5933000 	ldr	r3, [r3]
+ 680:	e353000d 	cmp	r3, #13
+ 684:	0afffff9 	beq	670 <print_array+0x80>
+            break;
+ 688:	ea000006 	b	6a8 <print_array+0xb8>
+// to the Hex displays of the board
+void print_array(const int array[], int size)
+{
+    int i = 0;
+
+    for(i = 0; i < size; ++i)
+ 68c:	e51b3008 	ldr	r3, [r11, #-8]
+ 690:	e2833001 	add	r3, r3, #1
+ 694:	e50b3008 	str	r3, [r11, #-8]
+ 698:	e51b2008 	ldr	r2, [r11, #-8]
+ 69c:	e51b3014 	ldr	r3, [r11, #-20]	; 0xffffffec
+ 6a0:	e1520003 	cmp	r2, r3
+ 6a4:	baffffdb 	blt	618 <print_array+0x28>
+        {
+            while(*KEY_PIO_ptr == 0xD);
+            break;
+        }
+    }
+}
+ 6a8:	e24bd004 	sub	sp, r11, #4
+ 6ac:	e8bd8800 	pop	{r11, pc}
+
+000006b0 <time_dalay>:
+
+// Time delay function
+void time_dalay()
+{
+ 6b0:	e52db004 	push	{r11}		; (str r11, [sp, #-4]!)
+ 6b4:	e28db000 	add	r11, sp, #0
+ 6b8:	e24dd00c 	sub	sp, sp, #12
+    volatile int delay_cnt;
+    for(delay_cnt = 5000000; delay_cnt != 0; --delay_cnt);
+ 6bc:	e3043b40 	movw	r3, #19264	; 0x4b40
+ 6c0:	e340304c 	movt	r3, #76	; 0x4c
+ 6c4:	e50b3008 	str	r3, [r11, #-8]
+ 6c8:	ea000002 	b	6d8 <time_dalay+0x28>
+ 6cc:	e51b3008 	ldr	r3, [r11, #-8]
+ 6d0:	e2433001 	sub	r3, r3, #1
+ 6d4:	e50b3008 	str	r3, [r11, #-8]
+ 6d8:	e51b3008 	ldr	r3, [r11, #-8]
+ 6dc:	e3530000 	cmp	r3, #0
+ 6e0:	1afffff9 	bne	6cc <time_dalay+0x1c>
+}
+ 6e4:	e28bd000 	add	sp, r11, #0
+ 6e8:	e8bd0800 	ldmfd	sp!, {r11}
+ 6ec:	e12fff1e 	bx	lr
+
+000006f0 <atexit>:
+ 6f0:	e1a01000 	mov	r1, r0
+ 6f4:	e3a00000 	mov	r0, #0
+ 6f8:	e92d4008 	push	{r3, lr}
+ 6fc:	e1a02000 	mov	r2, r0
+ 700:	e1a03000 	mov	r3, r0
+ 704:	eb00000e 	bl	744 <__register_exitproc>
+ 708:	e8bd4008 	pop	{r3, lr}
+ 70c:	e12fff1e 	bx	lr
+
+00000710 <exit>:
+ 710:	e92d4008 	push	{r3, lr}
+ 714:	e3a01000 	mov	r1, #0
+ 718:	e1a04000 	mov	r4, r0
+ 71c:	eb000045 	bl	838 <__call_exitprocs>
+ 720:	e59f3018 	ldr	r3, [pc, #24]	; 740 <exit+0x30>
+ 724:	e5930000 	ldr	r0, [r3]
+ 728:	e590303c 	ldr	r3, [r0, #60]	; 0x3c
+ 72c:	e3530000 	cmp	r3, #0
+ 730:	11a0e00f 	movne	lr, pc
+ 734:	112fff13 	bxne	r3
+ 738:	e1a00004 	mov	r0, r4
+ 73c:	eb0000c9 	bl	a68 <_exit>
+ 740:	00000f28 	.word	0x00000f28
+
+00000744 <__register_exitproc>:
+ 744:	e59fc0e4 	ldr	r12, [pc, #228]	; 830 <__register_exitproc+0xec>
+ 748:	e92d41f0 	push	{r4, r5, r6, r7, r8, lr}
+ 74c:	e59c4000 	ldr	r4, [r12]
+ 750:	e594c148 	ldr	r12, [r4, #328]	; 0x148
+ 754:	e35c0000 	cmp	r12, #0
+ 758:	0284cf53 	addeq	r12, r4, #332	; 0x14c
+ 75c:	e59c5004 	ldr	r5, [r12, #4]
+ 760:	0584c148 	streq	r12, [r4, #328]	; 0x148
+ 764:	e355001f 	cmp	r5, #31
+ 768:	e24dd010 	sub	sp, sp, #16
+ 76c:	e1a06000 	mov	r6, r0
+ 770:	da000015 	ble	7cc <__register_exitproc+0x88>
+ 774:	e59f00b8 	ldr	r0, [pc, #184]	; 834 <__register_exitproc+0xf0>
+ 778:	e3500000 	cmp	r0, #0
+ 77c:	1a000001 	bne	788 <__register_exitproc+0x44>
+ 780:	e3e00000 	mvn	r0, #0
+ 784:	ea000018 	b	7ec <__register_exitproc+0xa8>
+ 788:	e3a00e19 	mov	r0, #400	; 0x190
+ 78c:	e58d100c 	str	r1, [sp, #12]
+ 790:	e58d2008 	str	r2, [sp, #8]
+ 794:	e58d3004 	str	r3, [sp, #4]
+ 798:	e320f000 	nop	{0}
+ 79c:	e250c000 	subs	r12, r0, #0
+ 7a0:	e59d100c 	ldr	r1, [sp, #12]
+ 7a4:	e59d2008 	ldr	r2, [sp, #8]
+ 7a8:	e59d3004 	ldr	r3, [sp, #4]
+ 7ac:	0afffff3 	beq	780 <__register_exitproc+0x3c>
+ 7b0:	e5945148 	ldr	r5, [r4, #328]	; 0x148
+ 7b4:	e3a00000 	mov	r0, #0
+ 7b8:	e58c0004 	str	r0, [r12, #4]
+ 7bc:	e58c5000 	str	r5, [r12]
+ 7c0:	e584c148 	str	r12, [r4, #328]	; 0x148
+ 7c4:	e58c0188 	str	r0, [r12, #392]	; 0x188
+ 7c8:	e58c018c 	str	r0, [r12, #396]	; 0x18c
+ 7cc:	e3560000 	cmp	r6, #0
+ 7d0:	e59c4004 	ldr	r4, [r12, #4]
+ 7d4:	1a000007 	bne	7f8 <__register_exitproc+0xb4>
+ 7d8:	e2843002 	add	r3, r4, #2
+ 7dc:	e2844001 	add	r4, r4, #1
+ 7e0:	e78c1103 	str	r1, [r12, r3, lsl #2]
+ 7e4:	e58c4004 	str	r4, [r12, #4]
+ 7e8:	e3a00000 	mov	r0, #0
+ 7ec:	e28dd010 	add	sp, sp, #16
+ 7f0:	e8bd41f0 	pop	{r4, r5, r6, r7, r8, lr}
+ 7f4:	e12fff1e 	bx	lr
+ 7f8:	e3a00001 	mov	r0, #1
+ 7fc:	e1a00410 	lsl	r0, r0, r4
+ 800:	e08c8104 	add	r8, r12, r4, lsl #2
+ 804:	e3560002 	cmp	r6, #2
+ 808:	e59c7188 	ldr	r7, [r12, #392]	; 0x188
+ 80c:	e5883108 	str	r3, [r8, #264]	; 0x108
+ 810:	059c318c 	ldreq	r3, [r12, #396]	; 0x18c
+ 814:	e1877000 	orr	r7, r7, r0
+ 818:	01830000 	orreq	r0, r3, r0
+ 81c:	e1a05008 	mov	r5, r8
+ 820:	e5882088 	str	r2, [r8, #136]	; 0x88
+ 824:	e58c7188 	str	r7, [r12, #392]	; 0x188
+ 828:	058c018c 	streq	r0, [r12, #396]	; 0x18c
+ 82c:	eaffffe9 	b	7d8 <__register_exitproc+0x94>
+ 830:	00000f28 	.word	0x00000f28
+ 834:	00000000 	.word	0x00000000
+
+00000838 <__call_exitprocs>:
+ 838:	e92d4ff0 	push	{r4, r5, r6, r7, r8, r9, r10, r11, lr}
+ 83c:	e59f3168 	ldr	r3, [pc, #360]	; 9ac <__call_exitprocs+0x174>
+ 840:	e5933000 	ldr	r3, [r3]
+ 844:	e24dd014 	sub	sp, sp, #20
+ 848:	e58d3004 	str	r3, [sp, #4]
+ 84c:	e2833f52 	add	r3, r3, #328	; 0x148
+ 850:	e58d0008 	str	r0, [sp, #8]
+ 854:	e58d300c 	str	r3, [sp, #12]
+ 858:	e1a07001 	mov	r7, r1
+ 85c:	e3a08001 	mov	r8, #1
+ 860:	e59d3004 	ldr	r3, [sp, #4]
+ 864:	e5936148 	ldr	r6, [r3, #328]	; 0x148
+ 868:	e3560000 	cmp	r6, #0
+ 86c:	e59db00c 	ldr	r11, [sp, #12]
+ 870:	0a000033 	beq	944 <__call_exitprocs+0x10c>
+ 874:	e5965004 	ldr	r5, [r6, #4]
+ 878:	e2554001 	subs	r4, r5, #1
+ 87c:	5286a088 	addpl	r10, r6, #136	; 0x88
+ 880:	5285501f 	addpl	r5, r5, #31
+ 884:	508a5105 	addpl	r5, r10, r5, lsl #2
+ 888:	5a000007 	bpl	8ac <__call_exitprocs+0x74>
+ 88c:	ea000029 	b	938 <__call_exitprocs+0x100>
+ 890:	e5953000 	ldr	r3, [r5]
+ 894:	e1530007 	cmp	r3, r7
+ 898:	0a000005 	beq	8b4 <__call_exitprocs+0x7c>
+ 89c:	e2444001 	sub	r4, r4, #1
+ 8a0:	e3740001 	cmn	r4, #1
+ 8a4:	e2455004 	sub	r5, r5, #4
+ 8a8:	0a000022 	beq	938 <__call_exitprocs+0x100>
+ 8ac:	e3570000 	cmp	r7, #0
+ 8b0:	1afffff6 	bne	890 <__call_exitprocs+0x58>
+ 8b4:	e5963004 	ldr	r3, [r6, #4]
+ 8b8:	e06a2005 	rsb	r2, r10, r5
+ 8bc:	e2433001 	sub	r3, r3, #1
+ 8c0:	e0862002 	add	r2, r6, r2
+ 8c4:	e1530004 	cmp	r3, r4
+ 8c8:	e5123078 	ldr	r3, [r2, #-120]	; 0xffffff88
+ 8cc:	13a01000 	movne	r1, #0
+ 8d0:	05864004 	streq	r4, [r6, #4]
+ 8d4:	15021078 	strne	r1, [r2, #-120]	; 0xffffff88
+ 8d8:	e3530000 	cmp	r3, #0
+ 8dc:	0affffee 	beq	89c <__call_exitprocs+0x64>
+ 8e0:	e1a02418 	lsl	r2, r8, r4
+ 8e4:	e5961188 	ldr	r1, [r6, #392]	; 0x188
+ 8e8:	e1120001 	tst	r2, r1
+ 8ec:	e5969004 	ldr	r9, [r6, #4]
+ 8f0:	0a000016 	beq	950 <__call_exitprocs+0x118>
+ 8f4:	e596118c 	ldr	r1, [r6, #396]	; 0x18c
+ 8f8:	e1120001 	tst	r2, r1
+ 8fc:	1a000016 	bne	95c <__call_exitprocs+0x124>
+ 900:	e59d0008 	ldr	r0, [sp, #8]
+ 904:	e5151080 	ldr	r1, [r5, #-128]	; 0xffffff80
+ 908:	e1a0e00f 	mov	lr, pc
+ 90c:	e12fff13 	bx	r3
+ 910:	e5963004 	ldr	r3, [r6, #4]
+ 914:	e1530009 	cmp	r3, r9
+ 918:	1affffd0 	bne	860 <__call_exitprocs+0x28>
+ 91c:	e59b3000 	ldr	r3, [r11]
+ 920:	e1530006 	cmp	r3, r6
+ 924:	1affffcd 	bne	860 <__call_exitprocs+0x28>
+ 928:	e2444001 	sub	r4, r4, #1
+ 92c:	e3740001 	cmn	r4, #1
+ 930:	e2455004 	sub	r5, r5, #4
+ 934:	1affffdc 	bne	8ac <__call_exitprocs+0x74>
+ 938:	e59f1070 	ldr	r1, [pc, #112]	; 9b0 <__call_exitprocs+0x178>
+ 93c:	e3510000 	cmp	r1, #0
+ 940:	1a000009 	bne	96c <__call_exitprocs+0x134>
+ 944:	e28dd014 	add	sp, sp, #20
+ 948:	e8bd4ff0 	pop	{r4, r5, r6, r7, r8, r9, r10, r11, lr}
+ 94c:	e12fff1e 	bx	lr
+ 950:	e1a0e00f 	mov	lr, pc
+ 954:	e12fff13 	bx	r3
+ 958:	eaffffec 	b	910 <__call_exitprocs+0xd8>
+ 95c:	e5150080 	ldr	r0, [r5, #-128]	; 0xffffff80
+ 960:	e1a0e00f 	mov	lr, pc
+ 964:	e12fff13 	bx	r3
+ 968:	eaffffe8 	b	910 <__call_exitprocs+0xd8>
+ 96c:	e5963004 	ldr	r3, [r6, #4]
+ 970:	e3530000 	cmp	r3, #0
+ 974:	e5963000 	ldr	r3, [r6]
+ 978:	1a000008 	bne	9a0 <__call_exitprocs+0x168>
+ 97c:	e3530000 	cmp	r3, #0
+ 980:	0a000006 	beq	9a0 <__call_exitprocs+0x168>
+ 984:	e1a00006 	mov	r0, r6
+ 988:	e58b3000 	str	r3, [r11]
+ 98c:	e320f000 	nop	{0}
+ 990:	e59b6000 	ldr	r6, [r11]
+ 994:	e3560000 	cmp	r6, #0
+ 998:	1affffb5 	bne	874 <__call_exitprocs+0x3c>
+ 99c:	eaffffe8 	b	944 <__call_exitprocs+0x10c>
+ 9a0:	e1a0b006 	mov	r11, r6
+ 9a4:	e1a06003 	mov	r6, r3
+ 9a8:	eafffff9 	b	994 <__call_exitprocs+0x15c>
+ 9ac:	00000f28 	.word	0x00000f28
+ 9b0:	00000000 	.word	0x00000000
+
+000009b4 <register_fini>:
+ 9b4:	e92d4008 	push	{r3, lr}
+ 9b8:	e59f3010 	ldr	r3, [pc, #16]	; 9d0 <register_fini+0x1c>
+ 9bc:	e3530000 	cmp	r3, #0
+ 9c0:	159f000c 	ldrne	r0, [pc, #12]	; 9d4 <register_fini+0x20>
+ 9c4:	1bffff49 	blne	6f0 <atexit>
+ 9c8:	e8bd4008 	pop	{r3, lr}
+ 9cc:	e12fff1e 	bx	lr
+ 9d0:	00000f50 	.word	0x00000f50
+ 9d4:	000009d8 	.word	0x000009d8
+
+000009d8 <__libc_fini_array>:
+ 9d8:	e92d4038 	push	{r3, r4, r5, lr}
+ 9dc:	e59f5030 	ldr	r5, [pc, #48]	; a14 <__libc_fini_array+0x3c>
+ 9e0:	e59f4030 	ldr	r4, [pc, #48]	; a18 <__libc_fini_array+0x40>
+ 9e4:	e0654004 	rsb	r4, r5, r4
+ 9e8:	e1b04144 	asrs	r4, r4, #2
+ 9ec:	10855104 	addne	r5, r5, r4, lsl #2
+ 9f0:	0a000004 	beq	a08 <__libc_fini_array+0x30>
+ 9f4:	e5353004 	ldr	r3, [r5, #-4]!
+ 9f8:	e1a0e00f 	mov	lr, pc
+ 9fc:	e12fff13 	bx	r3
+ a00:	e2544001 	subs	r4, r4, #1
+ a04:	1afffffa 	bne	9f4 <__libc_fini_array+0x1c>
+ a08:	eb000150 	bl	f50 <__libc_fini>
+ a0c:	e8bd4038 	pop	{r3, r4, r5, lr}
+ a10:	e12fff1e 	bx	lr
+ a14:	00000f68 	.word	0x00000f68
+ a18:	00000f6c 	.word	0x00000f6c
+
+00000a1c <__cs3_premain>:
+ a1c:	e92d4008 	push	{r3, lr}
+ a20:	eb00001d 	bl	a9c <__libc_init_array>
+ a24:	e59f3030 	ldr	r3, [pc, #48]	; a5c <__cs3_premain+0x40>
+ a28:	e3530000 	cmp	r3, #0
+ a2c:	15930000 	ldrne	r0, [r3]
+ a30:	01a00003 	moveq	r0, r3
+ a34:	e59f3024 	ldr	r3, [pc, #36]	; a60 <__cs3_premain+0x44>
+ a38:	e3530000 	cmp	r3, #0
+ a3c:	15931000 	ldrne	r1, [r3]
+ a40:	01a01003 	moveq	r1, r3
+ a44:	e3a02000 	mov	r2, #0
+ a48:	ebfffe03 	bl	25c <main>
+ a4c:	e59f3010 	ldr	r3, [pc, #16]	; a64 <__cs3_premain+0x48>
+ a50:	e3530000 	cmp	r3, #0
+ a54:	1bffff2d 	blne	710 <exit>
+ a58:	eafffffe 	b	a58 <__cs3_premain+0x3c>
+	...
+ a64:	00000710 	.word	0x00000710
+
+00000a68 <_exit>:
+ a68:	e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
+ a6c:	e3a00018 	mov	r0, #24
+ a70:	e59f1004 	ldr	r1, [pc, #4]	; a7c <_exit+0x14>
+ a74:	ef123456 	svc	0x00123456
+ a78:	eafffffe 	b	a78 <_exit+0x10>
+ a7c:	00020026 	.word	0x00020026
+
+00000a80 <__cs3_isr_interrupt>:
+ a80:	eafffffe 	b	a80 <__cs3_isr_interrupt>
+
+00000a84 <__cs3_isr_undef>:
+ a84:	eafffffe 	b	a84 <__cs3_isr_undef>
+
+00000a88 <__cs3_isr_swi>:
+ a88:	eafffffe 	b	a88 <__cs3_isr_swi>
+
+00000a8c <__cs3_isr_pabort>:
+ a8c:	eafffffe 	b	a8c <__cs3_isr_pabort>
+
+00000a90 <__cs3_isr_dabort>:
+ a90:	eafffffe 	b	a90 <__cs3_isr_dabort>
+
+00000a94 <__cs3_isr_irq>:
+ a94:	eafffffe 	b	a94 <__cs3_isr_irq>
+
+00000a98 <__cs3_isr_fiq>:
+ a98:	eafffffe 	b	a98 <__cs3_isr_fiq>
+
+00000a9c <__libc_init_array>:
+ a9c:	e92d4070 	push	{r4, r5, r6, lr}
+ aa0:	e59f506c 	ldr	r5, [pc, #108]	; b14 <__libc_init_array+0x78>
+ aa4:	e59f606c 	ldr	r6, [pc, #108]	; b18 <__libc_init_array+0x7c>
+ aa8:	e0656006 	rsb	r6, r5, r6
+ aac:	e1b06146 	asrs	r6, r6, #2
+ ab0:	12455004 	subne	r5, r5, #4
+ ab4:	13a04000 	movne	r4, #0
+ ab8:	0a000005 	beq	ad4 <__libc_init_array+0x38>
+ abc:	e5b53004 	ldr	r3, [r5, #4]!
+ ac0:	e2844001 	add	r4, r4, #1
+ ac4:	e1a0e00f 	mov	lr, pc
+ ac8:	e12fff13 	bx	r3
+ acc:	e1560004 	cmp	r6, r4
+ ad0:	1afffff9 	bne	abc <__libc_init_array+0x20>
+ ad4:	e59f5040 	ldr	r5, [pc, #64]	; b1c <__libc_init_array+0x80>
+ ad8:	e59f6040 	ldr	r6, [pc, #64]	; b20 <__libc_init_array+0x84>
+ adc:	e0656006 	rsb	r6, r5, r6
+ ae0:	eb000112 	bl	f30 <_init>
+ ae4:	e1b06146 	asrs	r6, r6, #2
+ ae8:	12455004 	subne	r5, r5, #4
+ aec:	13a04000 	movne	r4, #0
+ af0:	0a000005 	beq	b0c <__libc_init_array+0x70>
+ af4:	e5b53004 	ldr	r3, [r5, #4]!
+ af8:	e2844001 	add	r4, r4, #1
+ afc:	e1a0e00f 	mov	lr, pc
+ b00:	e12fff13 	bx	r3
+ b04:	e1560004 	cmp	r6, r4
+ b08:	1afffff9 	bne	af4 <__libc_init_array+0x58>
+ b0c:	e8bd4070 	pop	{r4, r5, r6, lr}
+ b10:	e12fff1e 	bx	lr
+ b14:	00000f48 	.word	0x00000f48
+ b18:	00000f48 	.word	0x00000f48
+ b1c:	00000f48 	.word	0x00000f48
+ b20:	00000f50 	.word	0x00000f50
+
+Disassembly of section .rodata:
+
+00000b28 <signal_in>:
+ b28:	00000000 00000002 00000004 00000006     ................
+ b38:	00000008 00000009 00000009 00000009     ................
+ b48:	00000009 00000007 00000005 00000003     ................
+ b58:	00000001 ffffffff fffffffd fffffffb     ................
+ b68:	fffffff9 fffffff7 fffffff7 fffffff7     ................
+ b78:	fffffff7 fffffff8 fffffffa fffffffc     ................
+ b88:	fffffffe 00000000 00000002 00000004     ................
+ b98:	00000006 00000008 00000009 00000009     ................
+ ba8:	00000009 00000008 00000007 00000005     ................
+ bb8:	00000003 00000001 ffffffff fffffffd     ................
+ bc8:	fffffffa fffffff9 fffffff7 fffffff7     ................
+ bd8:	fffffff7 fffffff7 fffffff8 fffffffa     ................
+ be8:	fffffffc fffffffe 00000000 00000002     ................
+ bf8:	00000005 00000007 00000008 00000009     ................
+ c08:	00000009 00000009 00000008 00000007     ................
+ c18:	00000005 00000003 00000000 ffffffff     ................
+ c28:	fffffffc fffffffa fffffff9 fffffff7     ................
+ c38:	fffffff7 fffffff7 fffffff7 fffffff8     ................
+ c48:	fffffffa fffffffc fffffffe 00000000     ................
+ c58:	00000002 00000005 00000007 00000008     ................
+ c68:	00000009 00000009 00000009 00000008     ................
+ c78:	00000007 00000005 00000003 00000000     ................
+ c88:	ffffffff fffffffc fffffffa fffffff8     ................
+ c98:	fffffff7 fffffff7 fffffff7 fffffff7     ................
+ ca8:	fffffff8 fffffffa fffffffc ffffffff     ................
+ cb8:	00000000 00000003 00000005 00000007     ................
+ cc8:	00000008 00000009 00000009 00000009     ................
+ cd8:	00000008 00000007 00000005 00000003     ................
+ ce8:	00000000 ffffffff fffffffc fffffffa     ................
+ cf8:	fffffff8 fffffff7 fffffff7 fffffff7     ................
+ d08:	fffffff7 fffffff8 fffffffa fffffffc     ................
+ d18:	ffffffff 00000000 00000003 00000005     ................
+
+00000d28 <expected_values>:
+ d28:	00000000 00000004 00000014 0000002e     ................
+ d38:	00000054 00000078 00000094 000000a5     T...x...........
+ d48:	000000ab 000000a7 00000097 0000007d     ............}...
+ d58:	00000057 00000031 0000000b ffffffe5     W...1...........
+ d68:	ffffffbf ffffff99 ffffff77 ffffff61     ........w...a...
+ d78:	ffffff55 ffffff57 ffffff61 ffffff76     U...W...a...v...
+ d88:	ffffff96 ffffffbc ffffffe2 00000008     ................
+ d98:	0000002e 00000054 00000078 00000094     ....T...x.......
+ da8:	000000a5 000000a9 000000a1 00000092     ................
+ db8:	00000077 00000057 00000031 0000000b     w...W...1.......
+ dc8:	ffffffe3 ffffffb9 ffffff94 ffffff71     ............q...
+ dd8:	ffffff61 ffffff55 ffffff57 ffffff61     a...U...W...a...
+ de8:	ffffff76 ffffff96 ffffffbc ffffffe2     v...............
+ df8:	0000000a 00000036 0000005f 00000083     ....6..._.......
+ e08:	0000009a 000000a5 000000a9 000000a1     ................
+ e18:	00000092 00000077 00000055 0000002b     ....w...U...+...
+ e28:	00000004 ffffffd7 ffffffb4 ffffff8e     ................
+ e38:	ffffff71 ffffff61 ffffff55 ffffff57     q...a...U...W...
+ e48:	ffffff61 ffffff76 ffffff96 ffffffbc     a...v...........
+ e58:	ffffffe2 0000000a 00000036 0000005f     ........6..._...
+ e68:	00000083 0000009a 000000a5 000000a9     ................
+ e78:	000000a1 00000092 00000077 00000055     ........w...U...
+ e88:	0000002b 00000004 ffffffd7 ffffffb2     +...............
+ e98:	ffffff88 ffffff6c ffffff5b ffffff55     ....l...[...U...
+ ea8:	ffffff57 ffffff61 ffffff76 ffffff98     W...a...v.......
+ eb8:	ffffffc2 ffffffe9 00000016 0000003b     ............;...
+ ec8:	00000065 00000083 0000009a 000000a5     e...............
+ ed8:	000000a9 000000a1 00000092 00000077     ............w...
+ ee8:	00000055 0000002b 00000004 ffffffd7     U...+...........
+ ef8:	ffffffb2 ffffff88 ffffff6c ffffff5b     ........l...[...
+ f08:	ffffff55 ffffff57 ffffff61 ffffff76     U...W...a...v...
+ f18:	ffffff98 ffffffc2 ffffffe9 00000016     ................
+
+00000f28 <_global_impure_ptr>:
+ f28:	00000fa8 00000043                       ....C...
+
+00000f30 <_init>:
+ f30:	e1a0c00d 	mov	r12, sp
+ f34:	e92ddff8 	push	{r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, lr, pc}
+ f38:	e24cb004 	sub	r11, r12, #4
+ f3c:	e24bd028 	sub	sp, r11, #40	; 0x28
+ f40:	e89d6ff0 	ldm	sp, {r4, r5, r6, r7, r8, r9, r10, r11, sp, lr}
+ f44:	e12fff1e 	bx	lr
+
+00000f48 <__init_array_start>:
+ f48:	000009b4 	.word	0x000009b4
+
+00000f4c <__frame_dummy_init_array_entry>:
+ f4c:	00000208                                ....
+
+00000f50 <__libc_fini>:
+ f50:	e1a0c00d 	mov	r12, sp
+ f54:	e92ddff8 	push	{r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, lr, pc}
+ f58:	e24cb004 	sub	r11, r12, #4
+ f5c:	e24bd028 	sub	sp, r11, #40	; 0x28
+ f60:	e89d6ff0 	ldm	sp, {r4, r5, r6, r7, r8, r9, r10, r11, sp, lr}
+ f64:	e12fff1e 	bx	lr
+
+00000f68 <__fini_array_start>:
+ f68:	000001c4 	.word	0x000001c4
+
+00000f6c <__cs3_regions>:
+	...
+ f78:	000013d8 	.word	0x000013d8
+ f7c:	00000220 	.word	0x00000220

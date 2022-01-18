@@ -1,0 +1,104 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'arm_hps:ARM_HPS_UNT|arm_hps_cpu:cpu|arm_hps_cpu_hps_io:hps_io|arm_hps_cpu_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 2.563
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'arm_hps:ARM_HPS_UNT|arm_hps_cpu:cpu|arm_hps_cpu_hps_io:hps_io|arm_hps_cpu_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 0.143
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'arm_hps:ARM_HPS_UNT|arm_hps_cpu:cpu|arm_hps_cpu_hps_io:hps_io|arm_hps_cpu_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 5.041
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'arm_hps:ARM_HPS_UNT|arm_hps_cpu:cpu|arm_hps_cpu_hps_io:hps_io|arm_hps_cpu_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 1.063
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'arm_hps:ARM_HPS_UNT|arm_hps_cpu:cpu|arm_hps_cpu_hps_io:hps_io|arm_hps_cpu_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|pll_write_clk_dq_write_clk'
+Slack : 1.025
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'arm_hps:ARM_HPS_UNT|arm_hps_cpu:cpu|arm_hps_cpu_hps_io:hps_io|arm_hps_cpu_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 1.039
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'arm_hps:ARM_HPS_UNT|arm_hps_cpu:cpu|arm_hps_cpu_hps_io:hps_io|arm_hps_cpu_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 2.560
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'arm_hps:ARM_HPS_UNT|arm_hps_cpu:cpu|arm_hps_cpu_hps_io:hps_io|arm_hps_cpu_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 0.162
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'arm_hps:ARM_HPS_UNT|arm_hps_cpu:cpu|arm_hps_cpu_hps_io:hps_io|arm_hps_cpu_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 5.134
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'arm_hps:ARM_HPS_UNT|arm_hps_cpu:cpu|arm_hps_cpu_hps_io:hps_io|arm_hps_cpu_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 1.012
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'arm_hps:ARM_HPS_UNT|arm_hps_cpu:cpu|arm_hps_cpu_hps_io:hps_io|arm_hps_cpu_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|pll_write_clk_dq_write_clk'
+Slack : 1.030
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'arm_hps:ARM_HPS_UNT|arm_hps_cpu:cpu|arm_hps_cpu_hps_io:hps_io|arm_hps_cpu_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 1.046
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'arm_hps:ARM_HPS_UNT|arm_hps_cpu:cpu|arm_hps_cpu_hps_io:hps_io|arm_hps_cpu_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 2.943
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'arm_hps:ARM_HPS_UNT|arm_hps_cpu:cpu|arm_hps_cpu_hps_io:hps_io|arm_hps_cpu_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 0.084
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'arm_hps:ARM_HPS_UNT|arm_hps_cpu:cpu|arm_hps_cpu_hps_io:hps_io|arm_hps_cpu_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 5.393
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'arm_hps:ARM_HPS_UNT|arm_hps_cpu:cpu|arm_hps_cpu_hps_io:hps_io|arm_hps_cpu_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 0.984
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'arm_hps:ARM_HPS_UNT|arm_hps_cpu:cpu|arm_hps_cpu_hps_io:hps_io|arm_hps_cpu_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|pll_write_clk_dq_write_clk'
+Slack : 1.300
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'arm_hps:ARM_HPS_UNT|arm_hps_cpu:cpu|arm_hps_cpu_hps_io:hps_io|arm_hps_cpu_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 1.307
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'arm_hps:ARM_HPS_UNT|arm_hps_cpu:cpu|arm_hps_cpu_hps_io:hps_io|arm_hps_cpu_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 2.943
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'arm_hps:ARM_HPS_UNT|arm_hps_cpu:cpu|arm_hps_cpu_hps_io:hps_io|arm_hps_cpu_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 0.077
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'arm_hps:ARM_HPS_UNT|arm_hps_cpu:cpu|arm_hps_cpu_hps_io:hps_io|arm_hps_cpu_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 5.491
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'arm_hps:ARM_HPS_UNT|arm_hps_cpu:cpu|arm_hps_cpu_hps_io:hps_io|arm_hps_cpu_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 0.889
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'arm_hps:ARM_HPS_UNT|arm_hps_cpu:cpu|arm_hps_cpu_hps_io:hps_io|arm_hps_cpu_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|pll_write_clk_dq_write_clk'
+Slack : 1.304
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'arm_hps:ARM_HPS_UNT|arm_hps_cpu:cpu|arm_hps_cpu_hps_io:hps_io|arm_hps_cpu_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 1.311
+TNS   : 0.000
+
+------------------------------------------------------------
+Info: see the "DDR report" for DDR timing results
+------------------------------------------------------------
+------------------------------------------------------------

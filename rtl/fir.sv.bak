@@ -1,0 +1,63 @@
+module fir(
+    input  logic clk, rst, load,
+    input  logic valid_in,
+    output logic valid_out,
+    input  logic [63:0] coeff_in,
+    input  logic [15:0] signal_in,
+    output logic [15:0] signal_out);
+
+    // Signal declaration
+    logic [63:0] coeff_reg;
+    logic [15:0] first_tap;
+    logic [15:0] signal_array[2];
+    logic [15:0] signal_del_array[2];
+
+    // Valid out
+    assign valid_out = valid_in;
+
+    // First Tap multiplication
+    assign first_tap = signal_in * coeff_reg[15:0];
+
+    //
+    fir_tap TAP2 (
+        .clk            (clk),
+        .rst            (rst),
+        .enable         (valid_in),
+        .coeff_in       (coeff_in[31:16]),
+        .signal_in      (signal_in),
+        .signal_out     (signal_array[0]),
+        .signal_del     (signal_del_array[0]),
+        .prev_tap_result(first_tap));
+
+    //
+    fir_tap TAP3 (
+        .clk            (clk),
+        .rst            (rst),
+        .enable         (valid_in),
+        .coeff_in       (coeff_in[47:32]),
+        .signal_in      (signal_del_array[0]),
+        .signal_out     (signal_array[1]),
+        .signal_del     (signal_del_array[1]),
+        .prev_tap_result(signal_array[0]));
+
+    //
+    fir_tap TAP4 (
+        .clk            (clk),
+        .rst            (rst),
+        .enable         (valid_in),
+        .coeff_in       (coeff_in[63:48]),
+        .signal_in      (signal_del_array[1]),
+        .signal_out     (signal_out),
+        // .signal_del     (),
+        .prev_tap_result(signal_array[1]));
+
+    // Store the coefficient of tap into a register
+    always_ff @(posedge clk or posedge rst or posedge load) begin
+        if(rst)
+            coeff_reg <= '0;
+        else if(load)
+            coeff_reg <= coeff_in;
+    end
+
+
+endmodule // fir
