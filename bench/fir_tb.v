@@ -152,4 +152,4 @@ module fir_tb();
             $display("\nFAIL: at least one outcome of the UUT did not match with the expected one");
     end
 
-endmodule // fir6_tb
+endmodule // fir_tb
