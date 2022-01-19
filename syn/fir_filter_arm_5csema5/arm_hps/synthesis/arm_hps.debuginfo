@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="arm_hps" kind="system" version="16.1" fabric="QSYS">
  <!-- Format version 16.1 196 (Future versions may contain additional information.) -->
- <!-- 2022.01.15.15:37:46 -->
+ <!-- 2022.01.18.15:56:58 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.EClockAdapter</type>
@@ -53,7 +53,7 @@
  </parameter>
  <parameter name="generationId">
   <type>int</type>
-  <value>1642289833</value>
+  <value>1642550184</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>true</visible>
@@ -52243,5 +52243,5 @@ parameters are a RESULT of the module parameters. -->
   <version>16.1</version>
  </plugin>
  <reportVersion>16.1 196</reportVersion>
- <uniqueIdentifier>2EBFC0220A6F0000017E601A3D98</uniqueIdentifier>
+ <uniqueIdentifier>2EBFC0220A6F0000017E6F9EE30B</uniqueIdentifier>
 </EnsembleReport>

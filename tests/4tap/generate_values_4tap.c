@@ -1,3 +1,13 @@
+//==========================================================
+//
+// Helper file for 4-Tap FIR filter to generate expected
+// values based on input signals and tap coefficients.
+//
+// Last updated on 02/18/2022
+// Created by Cole Maxwell
+//
+//==========================================================
+
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
@@ -31,21 +41,31 @@ int main (int argc, char *argv[])
     // Write expected values to a new file or overwrite the existing file.
     FILE *fp2;
     fp2 = fopen("expected_values_temp.txt", "w");
+    FILE *fp5;
+    fp5 = fopen("test_fir_filter_values.txt", "w");
     // Calculate the first 4 values manually until the all the taps have valid values.
     int signal_one = signal_in[0]*coeff[0];
     int signal_two = signal_in[1]*coeff[0] + signal_in[0]*coeff[1];
     int signal_three = signal_in[2]*coeff[0] + signal_in[1]*coeff[1] + signal_in[0]*coeff[2];
     int signal_four = signal_in[3]*coeff[0] + signal_in[2]*coeff[1] + signal_in[1]*coeff[2] + signal_in[0]*coeff[3];
 
-    // Write first 4 expected values to file.
+    // Write first 4 expected values to tb file.
     fprintf(fp2, "%.4x // %d\n", signal_one, signal_one);
     fprintf(fp2, "%.4x // %d\n", signal_two, signal_two);
     fprintf(fp2, "%.4x // %d\n", signal_three, signal_three);
     fprintf(fp2, "%.4x // %d\n", signal_four, signal_four);
+    // Write first 4 expected values to source file.
+    fprintf(fp5, "%d,", signal_one);
+    fprintf(fp5, "%d,", signal_two);
+    fprintf(fp5, "%d,", signal_three);
+    fprintf(fp5, "%d,", signal_four);
 
     // Finish calculating and writing expected values for the remaining input signals.
     for (int j=fir_order; j<128; j++) {
         int signal_out = signal_in[j]*coeff[0] + signal_in[j-1]*coeff[1] + signal_in[j-2]*coeff[2] + signal_in[j-3]*coeff[3];
+        // Write to source file first.
+        fprintf(fp5, "%d,", signal_out);
+        // Write to tb file.
         if (signal_out < 0) {
             // Prepend/flag negative values with 'n' for truncating later.            
             fprintf(fp2, "n%.4x // %d\n", signal_out, signal_out);

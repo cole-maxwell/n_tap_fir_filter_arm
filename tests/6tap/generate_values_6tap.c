@@ -1,3 +1,13 @@
+//==========================================================
+//
+// Helper file for 6-Tap FIR filter to generate expected
+// values based on input signals and tap coefficients.
+//
+// Last updated on 02/18/2022
+// Created by Cole Maxwell
+//
+//==========================================================
+
 #include <stdio.h>
 #include <math.h>
 #include <string.h>

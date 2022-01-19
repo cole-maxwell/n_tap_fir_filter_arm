@@ -1,15 +1,11 @@
 //==========================================================
-// Company:         
-// Engineer:        G.Provelengios
-// 
-// Created Date:    Dec 5, 2014
-// Design:          FIFO with AXI Stream interface
-// Module Name:     fifo.v
-// Project Name:    
 //
-// Comments:        
+// FIFO with AXI Stream interface
 //
-//===========================================================
+// Updated by Cole Maxwell on 02/18/2022
+// Created by George Provelengios on 12/05/2014
+//
+//==========================================================
 module fifo #(
     parameter WIDTH     = 32,
     parameter DEPTH_LOG = 5

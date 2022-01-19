@@ -1,7 +1,9 @@
 //==========================================================
 //
-// Test Bench for 6-Tap FIR Filter
-// Last Update: 1/17/22
+// Test Bench for N-Tap FIR Filter
+//
+// Updated by Cole Maxwell on 02/18/2022
+// Created by George Provelengios on 02/04/2017
 //
 //==========================================================
 
@@ -13,7 +15,7 @@ module fir_tb();
     // Generic parameters of the testbench
     localparam CLK_PERIOD = 10;
     // Declare the number of taps for the FIR filter
-    localparam FIR_ORDER = 6; 
+    localparam FIR_ORDER = 4; 
 
     // Generate clock signal
     reg clk;

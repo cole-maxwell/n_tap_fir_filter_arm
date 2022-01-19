@@ -10,25 +10,25 @@
 # Copying C:/intelFPGA_lite/16.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -sv -work work +incdir+C:/Users/coleh/Desktop/uma/ece636_reconfigurableComputing/hw3_project/project-materials-part1/fir_filter_arm_student/fir_filter_arm/rtl {C:/Users/coleh/Desktop/uma/ece636_reconfigurableComputing/hw3_project/project-materials-part1/fir_filter_arm_student/fir_filter_arm/rtl/fir_tap.sv}
+# vlog -sv -work work +incdir+C:/Users/coleh/Desktop/reconfigurable_computing/projects/n_tap_fir_filter/rtl {C:/Users/coleh/Desktop/reconfigurable_computing/projects/n_tap_fir_filter/rtl/fir_tap.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 08:02:54 on Jan 18,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/coleh/Desktop/uma/ece636_reconfigurableComputing/hw3_project/project-materials-part1/fir_filter_arm_student/fir_filter_arm/rtl" C:/Users/coleh/Desktop/uma/ece636_reconfigurableComputing/hw3_project/project-materials-part1/fir_filter_arm_student/fir_filter_arm/rtl/fir_tap.sv 
+# Start time: 11:40:36 on Jan 18,2022
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/coleh/Desktop/reconfigurable_computing/projects/n_tap_fir_filter/rtl" C:/Users/coleh/Desktop/reconfigurable_computing/projects/n_tap_fir_filter/rtl/fir_tap.sv 
 # -- Compiling module fir_tap
 # 
 # Top level modules:
 # 	fir_tap
-# End time: 08:02:54 on Jan 18,2022, Elapsed time: 0:00:00
+# End time: 11:40:36 on Jan 18,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/coleh/Desktop/uma/ece636_reconfigurableComputing/hw3_project/project-materials-part1/fir_filter_arm_student/fir_filter_arm/rtl {C:/Users/coleh/Desktop/uma/ece636_reconfigurableComputing/hw3_project/project-materials-part1/fir_filter_arm_student/fir_filter_arm/rtl/fir.sv}
+# vlog -sv -work work +incdir+C:/Users/coleh/Desktop/reconfigurable_computing/projects/n_tap_fir_filter/rtl {C:/Users/coleh/Desktop/reconfigurable_computing/projects/n_tap_fir_filter/rtl/fir.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 08:02:54 on Jan 18,2022
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/coleh/Desktop/uma/ece636_reconfigurableComputing/hw3_project/project-materials-part1/fir_filter_arm_student/fir_filter_arm/rtl" C:/Users/coleh/Desktop/uma/ece636_reconfigurableComputing/hw3_project/project-materials-part1/fir_filter_arm_student/fir_filter_arm/rtl/fir.sv 
+# Start time: 11:40:36 on Jan 18,2022
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/coleh/Desktop/reconfigurable_computing/projects/n_tap_fir_filter/rtl" C:/Users/coleh/Desktop/reconfigurable_computing/projects/n_tap_fir_filter/rtl/fir.sv 
 # -- Compiling module fir
 # 
 # Top level modules:
 # 	fir
-# End time: 08:02:54 on Jan 18,2022, Elapsed time: 0:00:00
+# End time: 11:40:36 on Jan 18,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlib arm_hps
 # ** Warning: (vlib-34) Library already exists at "arm_hps".
@@ -37,19 +37,19 @@
 # vmap arm_hps arm_hps 
 # Modifying modelsim.ini
 # 
-vlog -reportprogress 300 -work work C:/Users/coleh/Desktop/uma/ece636_reconfigurableComputing/hw3_project/project-materials-part1/fir_filter_arm_student/fir_filter_arm/bench/fir_tb.v
+vlog -reportprogress 300 -work work C:/Users/coleh/Desktop/reconfigurable_computing/projects/n_tap_fir_filter/bench/fir_tb.v
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 08:03:03 on Jan 18,2022
-# vlog -reportprogress 300 -work work C:/Users/coleh/Desktop/uma/ece636_reconfigurableComputing/hw3_project/project-materials-part1/fir_filter_arm_student/fir_filter_arm/bench/fir_tb.v 
+# Start time: 11:41:08 on Jan 18,2022
+# vlog -reportprogress 300 -work work C:/Users/coleh/Desktop/reconfigurable_computing/projects/n_tap_fir_filter/bench/fir_tb.v 
 # -- Compiling module fir_tb
 # 
 # Top level modules:
 # 	fir_tb
-# End time: 08:03:03 on Jan 18,2022, Elapsed time: 0:00:00
+# End time: 11:41:08 on Jan 18,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 vsim work.fir_tb
 # vsim work.fir_tb 
-# Start time: 08:03:07 on Jan 18,2022
+# Start time: 11:41:13 on Jan 18,2022
 # Loading work.fir_tb
 # Loading sv_std.std
 # Loading work.fir
@@ -75,5 +75,5 @@ sim:/fir_tb/signal_out
 run 8 us
 # 
 # SUCCESS: the UUT passed ALL the test cases
-# End time: 08:04:58 on Jan 18,2022, Elapsed time: 0:01:51
+# End time: 11:41:23 on Jan 18,2022, Elapsed time: 0:00:10
 # Errors: 0, Warnings: 0

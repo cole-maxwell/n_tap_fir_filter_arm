@@ -4,535 +4,199 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "valid_out",
+					"name" : "HEX0[0]",
 					"strict" : false
 				},
 				{
-					"name" : "signal_out[0]",
+					"name" : "HEX0[1]",
 					"strict" : false
 				},
 				{
-					"name" : "signal_out[1]",
+					"name" : "HEX0[2]",
 					"strict" : false
 				},
 				{
-					"name" : "signal_out[2]",
+					"name" : "HEX0[3]",
 					"strict" : false
 				},
 				{
-					"name" : "signal_out[3]",
+					"name" : "HEX0[4]",
 					"strict" : false
 				},
 				{
-					"name" : "signal_out[4]",
+					"name" : "HEX0[5]",
 					"strict" : false
 				},
 				{
-					"name" : "signal_out[5]",
+					"name" : "HEX0[6]",
 					"strict" : false
 				},
 				{
-					"name" : "signal_out[6]",
+					"name" : "HEX1[0]",
 					"strict" : false
 				},
 				{
-					"name" : "signal_out[7]",
+					"name" : "HEX1[1]",
 					"strict" : false
 				},
 				{
-					"name" : "signal_out[8]",
+					"name" : "HEX1[2]",
 					"strict" : false
 				},
 				{
-					"name" : "signal_out[9]",
+					"name" : "HEX1[3]",
 					"strict" : false
 				},
 				{
-					"name" : "signal_out[10]",
+					"name" : "HEX1[4]",
 					"strict" : false
 				},
 				{
-					"name" : "signal_out[11]",
+					"name" : "HEX1[5]",
 					"strict" : false
 				},
 				{
-					"name" : "signal_out[12]",
+					"name" : "HEX1[6]",
 					"strict" : false
 				},
 				{
-					"name" : "signal_out[13]",
+					"name" : "HEX2[0]",
 					"strict" : false
 				},
 				{
-					"name" : "signal_out[14]",
+					"name" : "HEX2[1]",
 					"strict" : false
 				},
 				{
-					"name" : "signal_out[15]",
+					"name" : "HEX2[2]",
 					"strict" : false
 				},
 				{
-					"name" : "valid_in",
+					"name" : "HEX2[3]",
 					"strict" : false
 				},
 				{
-					"name" : "coeff_in[80]",
+					"name" : "HEX2[4]",
 					"strict" : false
 				},
 				{
-					"name" : "coeff_in[81]",
+					"name" : "HEX2[5]",
 					"strict" : false
 				},
 				{
-					"name" : "coeff_in[82]",
+					"name" : "HEX2[6]",
 					"strict" : false
 				},
 				{
-					"name" : "coeff_in[83]",
+					"name" : "HEX3[0]",
 					"strict" : false
 				},
 				{
-					"name" : "coeff_in[84]",
+					"name" : "HEX3[1]",
 					"strict" : false
 				},
 				{
-					"name" : "coeff_in[85]",
+					"name" : "HEX3[2]",
 					"strict" : false
 				},
 				{
-					"name" : "coeff_in[86]",
+					"name" : "HEX3[3]",
 					"strict" : false
 				},
 				{
-					"name" : "coeff_in[87]",
+					"name" : "HEX3[4]",
 					"strict" : false
 				},
 				{
-					"name" : "coeff_in[88]",
+					"name" : "HEX3[5]",
 					"strict" : false
 				},
 				{
-					"name" : "coeff_in[89]",
+					"name" : "HEX3[6]",
 					"strict" : false
 				},
 				{
-					"name" : "coeff_in[90]",
+					"name" : "HEX4[0]",
 					"strict" : false
 				},
 				{
-					"name" : "coeff_in[91]",
+					"name" : "HEX4[2]",
 					"strict" : false
 				},
 				{
-					"name" : "coeff_in[92]",
+					"name" : "HEX4[3]",
 					"strict" : false
 				},
 				{
-					"name" : "coeff_in[93]",
+					"name" : "HEX4[4]",
 					"strict" : false
 				},
 				{
-					"name" : "coeff_in[94]",
+					"name" : "HEX4[5]",
 					"strict" : false
 				},
 				{
-					"name" : "coeff_in[95]",
+					"name" : "HEX4[6]",
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "LEDR[0]",
 					"strict" : false
 				},
 				{
-					"name" : "rst",
+					"name" : "LEDR[1]",
 					"strict" : false
 				},
 				{
-					"name" : "coeff_in[64]",
+					"name" : "LEDR[2]",
 					"strict" : false
 				},
 				{
-					"name" : "coeff_in[65]",
+					"name" : "LEDR[3]",
 					"strict" : false
 				},
 				{
-					"name" : "coeff_in[66]",
+					"name" : "LEDR[4]",
 					"strict" : false
 				},
 				{
-					"name" : "coeff_in[67]",
+					"name" : "LEDR[5]",
 					"strict" : false
 				},
 				{
-					"name" : "coeff_in[68]",
+					"name" : "LEDR[6]",
 					"strict" : false
 				},
 				{
-					"name" : "coeff_in[69]",
+					"name" : "LEDR[7]",
 					"strict" : false
 				},
 				{
-					"name" : "coeff_in[70]",
+					"name" : "LEDR[8]",
 					"strict" : false
 				},
 				{
-					"name" : "coeff_in[71]",
+					"name" : "LEDR[9]",
 					"strict" : false
 				},
 				{
-					"name" : "coeff_in[72]",
+					"name" : "CLOCK_50",
 					"strict" : false
 				},
 				{
-					"name" : "coeff_in[73]",
+					"name" : "KEY[0]",
 					"strict" : false
 				},
 				{
-					"name" : "coeff_in[74]",
+					"name" : "KEY[1]",
 					"strict" : false
 				},
 				{
-					"name" : "coeff_in[75]",
+					"name" : "KEY[2]",
 					"strict" : false
 				},
 				{
-					"name" : "coeff_in[76]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[77]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[78]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[79]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[48]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[49]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[50]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[51]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[52]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[53]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[54]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[55]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[56]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[57]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[58]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[59]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[60]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[61]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[62]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[63]",
-					"strict" : false
-				},
-				{
-					"name" : "signal_in[0]",
-					"strict" : false
-				},
-				{
-					"name" : "signal_in[1]",
-					"strict" : false
-				},
-				{
-					"name" : "signal_in[2]",
-					"strict" : false
-				},
-				{
-					"name" : "signal_in[3]",
-					"strict" : false
-				},
-				{
-					"name" : "signal_in[4]",
-					"strict" : false
-				},
-				{
-					"name" : "signal_in[5]",
-					"strict" : false
-				},
-				{
-					"name" : "signal_in[6]",
-					"strict" : false
-				},
-				{
-					"name" : "signal_in[7]",
-					"strict" : false
-				},
-				{
-					"name" : "signal_in[8]",
-					"strict" : false
-				},
-				{
-					"name" : "signal_in[9]",
-					"strict" : false
-				},
-				{
-					"name" : "signal_in[10]",
-					"strict" : false
-				},
-				{
-					"name" : "signal_in[11]",
-					"strict" : false
-				},
-				{
-					"name" : "signal_in[12]",
-					"strict" : false
-				},
-				{
-					"name" : "signal_in[13]",
-					"strict" : false
-				},
-				{
-					"name" : "signal_in[14]",
-					"strict" : false
-				},
-				{
-					"name" : "signal_in[15]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[16]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[17]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[18]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[19]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[20]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[21]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[22]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[23]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[24]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[25]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[26]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[27]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[28]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[29]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[30]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[31]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[32]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[33]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[34]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[35]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[36]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[37]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[38]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[39]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[40]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[41]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[42]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[43]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[44]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[45]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[46]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[47]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[0]",
-					"strict" : false
-				},
-				{
-					"name" : "load",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[1]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[2]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[3]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[4]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[5]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[6]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[7]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[8]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[9]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[10]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[11]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[12]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[13]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[14]",
-					"strict" : false
-				},
-				{
-					"name" : "coeff_in[15]",
+					"name" : "KEY[3]",
 					"strict" : false
 				}
 			]

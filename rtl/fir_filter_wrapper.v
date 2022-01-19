@@ -42,38 +42,14 @@ module fir_filter_wrapper #(
     wire [15:0] fir_data_out;
     wire        fir_valid_out;
 
-    //===================================================
-    //** FILL THIS OUT **********************************
-    //***************************************************
-    // Instantiate here your FIR module. If you have
-    // followed the instructions in the assignment, the
-    // interface of your module should be the same with
-    // I/O list below.
-    //
-    // *TIP:
-    // Assert to 1 the input signal load. Write the
-    // following coefficients in the coeff_in input
-    // bus: Tap1: 2, Tap2: 6, Tap3: 5, Tap4: 6.
-    // **Consult the followng I/O list below to
-    // instantiate you FIR module
-    //===================================================
-    //     FIR_UNT(
-    //     .clk       (clk),
-    //     .rst       (rst),
-    //     .load      (1'b1),
-    //     .valid_in  (fir_valid_in),
-    //     .valid_out (fir_valid_out),
-    //     .coeff_in  ({16'd6, 16'd5, 16'd6, 16'd2}),
-    //     .signal_in (fir_data_in),
-    //     .signal_out(fir_data_out)
-    // );
+    // Instantiate FIR module
     fir FIR_UNT(
         .clk       (clk),
         .rst       (rst),
         .load      (1'b1),
         .valid_in  (fir_valid_in),
         .valid_out (fir_valid_out),
-        .coeff_in  ({16'd6, 16'd5, 16'd6, 16'd2}),
+        .coeff_in  ({16'd7, 16'd6, 16'd7, 16'd2}),
         .signal_in (fir_data_in),
         .signal_out(fir_data_out)
         );

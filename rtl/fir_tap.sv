@@ -1,3 +1,12 @@
+//==========================================================
+//
+// Single tap instantiated N times by 'fir.sv'
+//
+// Last update on 02/18/2022
+// Created by Cole Maxwell
+//
+//==========================================================
+
 module fir_tap(
     input  logic clk, rst, enable,
     input  logic [15:0] coeff_in, signal_in, prev_tap_result,

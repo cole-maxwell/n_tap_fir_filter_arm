@@ -1,6 +1,16 @@
+//==========================================================
+//
+// Modular FIR module for N-Tap instantiation.
+//
+// Last update on 02/18/2022
+// Created by Cole Maxwell
+//
+//==========================================================
+
 module fir #(
-	 // Define Tap Order / Number of Taps
-	 parameter N = 6
+
+	// Define Tap Order / Number of Taps
+	parameter N = 4
 		)(
     input  logic clk, rst, load,
     input  logic valid_in,
