@@ -51,7 +51,7 @@ const int expected_values[] = {
 
 int fir_results[SIGNAL_SIZE];
 
-void time_dalay();
+void time_delay();
 void print_array(const int [], int);
 void send_word(int);
 void send_signal_values();
@@ -92,7 +92,7 @@ int main()
             {
                 *LED_PIO_ptr     = 0;
                 *DISPLAY_PIO_ptr = 0;
-                time_dalay();
+                time_delay();
 
                 break;
             }
@@ -215,7 +215,7 @@ void print_array(const int array[], int size)
 
     for(i = 0; i < size; ++i)
     {
-        time_dalay();
+        time_delay();
         *DISPLAY_PIO_ptr = array[i];
         *LED_PIO_ptr     = i;
 
@@ -229,7 +229,7 @@ void print_array(const int array[], int size)
 }
 
 // Time delay function
-void time_dalay()
+void time_delay()
 {
     volatile int delay_cnt;
     for(delay_cnt = 5000000; delay_cnt != 0; --delay_cnt);

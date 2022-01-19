@@ -3,7 +3,7 @@
 // Helper file for 4-Tap FIR filter to generate expected
 // values based on input signals and tap coefficients.
 //
-// Last updated on 02/18/2022
+// Last updated on 02/19/2022
 // Created by Cole Maxwell
 //
 //==========================================================
@@ -12,14 +12,12 @@
 #include <math.h>
 #include <string.h>
 
-int main (int argc, char *argv[])
-{
-    // Declare the number of taps.
-    const int fir_order = 4;
-    // Define filter coefficients
-    const int coeff[] = { 2, 7, 6, 7 };
-    // Define input signals
-    const int signal_in[] = {
+// Declare the number of taps.
+const int fir_order = 4;
+// Define filter coefficients
+const int coeff[] = { 2, 7, 6, 7 };
+// Define input signals
+const int signal_in[] = {
      0,  2,  4,  6,  8,  9,  9,  9,  9,  7,  5,  3,  1, -1, -3, -5,
     -7, -9, -9, -9, -9, -8, -6, -4, -2,  0,  2,  4,  6,  8,  9,  9,
      9,  8,  7,  5,  3,  1, -1, -3, -6, -7, -9, -9, -9, -9, -8, -6,
@@ -29,20 +27,46 @@ int main (int argc, char *argv[])
     -8, -6, -4, -1,  0,  3,  5,  7,  8,  9,  9,  9,  8,  7,  5,  3,
      0, -1, -4, -6, -8, -9, -9, -9, -9, -8, -6, -4, -1,  0,  3,  5};
 
+void write_coefficients();
+void write_expected_values();
+void truncate_expected_values();
+
+//==========================================================
+// Main program
+//==========================================================
+int main (int argc, char *argv[])
+{
     // Write coefficients to a new file or overwrite the existing file.
+    write_coefficients();
+    // Write expected values to a new file or overwrite the existing file.
+    write_expected_values();
+    // Trucate expected values to format for test bench.
+    truncate_expected_values();
+
+    return 0;
+}
+
+// Write coefficients to a new file or overwrite the existing file.
+void write_coefficients() {
+
+    printf("\n...generating coefficients for 4 taps...:\n");
     FILE *fp1;
     fp1 = fopen("coeff_4tap.txt", "w");
     for (int i=0; i < fir_order; i++) {
         fprintf(fp1, "%.4x // %d\n", coeff[i], coeff[i]);
     }
     fclose(fp1);
-    printf("Finished generating coefficients for 4 taps...:\n");
+    printf("...finished generating coefficients for 4 taps...:\n");
+}
 
-    // Write expected values to a new file or overwrite the existing file.
-    FILE *fp2;
-    fp2 = fopen("expected_values_temp.txt", "w");
-    FILE *fp5;
-    fp5 = fopen("test_fir_filter_values.txt", "w");
+// Write expected values to a new file or overwrite the existing file.
+void write_expected_values() {
+
+    printf("\n...generating values for 4 taps...:\n");
+
+    FILE *fp2 = fopen("expected_values_temp.txt", "w");
+    FILE *fp5 = fopen("test_fir_filter_values.txt", "w");
+
     // Calculate the first 4 values manually until the all the taps have valid values.
     int signal_one = signal_in[0]*coeff[0];
     int signal_two = signal_in[1]*coeff[0] + signal_in[0]*coeff[1];
@@ -62,7 +86,8 @@ int main (int argc, char *argv[])
 
     // Finish calculating and writing expected values for the remaining input signals.
     for (int j=fir_order; j<128; j++) {
-        int signal_out = signal_in[j]*coeff[0] + signal_in[j-1]*coeff[1] + signal_in[j-2]*coeff[2] + signal_in[j-3]*coeff[3];
+        int signal_out = signal_in[j]*coeff[0] + signal_in[j-1]*coeff[1]
+                        + signal_in[j-2]*coeff[2] + signal_in[j-3]*coeff[3];
         // Write to source file first.
         fprintf(fp5, "%d,", signal_out);
         // Write to tb file.
@@ -74,8 +99,12 @@ int main (int argc, char *argv[])
         }
     }
     fclose(fp2);
-    printf("Finished generating values for 4 taps...:\n");
-    printf("Truncating negative values to 4 digits...:\n");
+    printf("...finished generating values for 4 taps...:\n");
+}
+
+void truncate_expected_values() {
+
+    printf("\n...truncating negative values to 4 digits...:\n");
     	
     char line [30];
 	FILE *fp3 = NULL;
@@ -85,17 +114,18 @@ int main (int argc, char *argv[])
 
 	if(fp3 == NULL) {
 		printf("Error, Can't open file\n");
-		return 0;
-	}
-	while ( fgets ( line, sizeof(line), fp3 ) != NULL )	{
-        if (line[0] == 'n') {
-            char *trunc = line + 5;
-            fprintf(fp4, "%s", trunc);
-            continue;
+	} else {
+        while ( fgets ( line, sizeof(line), fp3 ) != NULL )	{
+            if (line[0] == 'n') {
+                char *trunc = line + 5;
+                fprintf(fp4, "%s", trunc);
+                continue;
+            }
+            fprintf(fp4, "%s", line);
         }
-        fprintf(fp4, "%s", line);
-	}
+    }
 	fclose (fp3);
     fclose (fp4);
-    return 0;
+
+    printf("...finished truncating negative values to 4 digits...:\n");
 }
