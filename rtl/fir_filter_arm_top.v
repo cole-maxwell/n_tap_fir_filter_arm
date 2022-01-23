@@ -321,54 +321,26 @@ module fir_filter_arm_top(
         .data_out (fir_filter_data_o)
     );
 
-
 //=======================================================
 // ************** User Declarations *********************
 //=======================================================
 // Use this section to instantiate and declare any
 // module or signal you need in your design
-//=======================================================
+//======================================================='
+
     wire [18:0] bin2bcd_out;
 
-
-    //===================================================
-    //** FILL THIS OUT **********************************
-    //***************************************************
     // Instantiate here the BIN2BCD converter to convert
     // the binary output of the HPS to BCD representation
-    //
-    // *TIP:
-    // connect the output PIO signal pio_display_export
-    // to the input port of the BIN2BCD converter
-    // (consider how many bits you really need from this
-    // signal given that the board has 6 Hex displays)
-    //===================================================
-    //     BIN2BCD_UNT(
-    //     .data_in (),
-    //     .data_out(),
-    // );
     binary_to_decimal BIN2BCD_UNT(
         .inbcd (pio_display_export[13:0]),
         .outbcd(bin2bcd_out)
     );
 
 
-    //===================================================
-    //** FILL THIS OUT **********************************
-    //***************************************************
+
     // Instantiate here the DISPLAY LOGIC unit in order
     // to drive the 6 Hex displays of the board.
-    //
-    // *TIP:
-    // connect the output port of the BIN2BCD converter
-    // to the input port of the DISPLAY LOGIC unit. In the
-    // output port of this unit connect the 6 output Hex
-    // buses: HEX5, HEX4, HEX3, HEX2, HEX1, HEX0
-    //===================================================
-    //     DISPLAY_LOGIC_UNT(
-    //     .data_in (),
-    //     .data_out({HEX5, HEX4, HEX3, HEX2, HEX1, HEX0})
-    // );
     display_logic #(.NUM_DISPLAYS(6))
     DISPLAY_LOGIC_UNT(
         .bcd_value({(5'b00000), bin2bcd_out}),
